@@ -1,0 +1,46 @@
+<html>
+  <head>
+  <script type="text/javascript" src="node_modules/underscore/underscore.js"></script>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="magnifying-glass.js"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+      var views = _.map($('.box'), function(elem) {
+        return {
+          '$el': $(elem),
+          data: {}
+        }
+      });
+
+      MagnifyingGlass.startSearch(views);
+    })
+
+    </script>
+    <style type="text/css">
+    .box {
+      border:5px solid red;
+      width:100%;
+      height:100px;
+      margin-top:20px;
+    }
+
+    .marionette-inspector-highlighted-element {
+      position: absolute;
+      background: rgba(55, 161, 243, 0.48);
+      -webkit-filter: grayscale(20%);
+    }
+    </style>
+  </head>
+  <body>
+  <h1>YoLo</h1>
+
+  <div class="box">some boxes</div>
+  <div class="box">some boxes</div>
+  <div class="box">some boxes</div>
+  <div class="box">some boxes</div>
+  <div class="box">some boxes</div>
+
+
+  </body>
+</html>
